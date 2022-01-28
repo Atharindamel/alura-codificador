@@ -3,21 +3,37 @@ var botonAdicionar = document.getElementById("btn-encriptar")
 botonAdicionar.addEventListener("click",function(e){
     e.preventDefault();
     var form = document.getElementById("input-texto");
-    
-    encriptarTexto(form.value);
+    console.log(form.value);
 
+    var frase = encriptarTexto(form.value);
+    console.log(frase);
 });
 
 
 function encriptarTexto (form){
-    let newForm = form;
     
-    const vocales = ["a","e","i","o","u"];
+    var letras = form.split("");
 
-    for(let i = 0; i < form.length, i++){
-        if
+    for (var i = 0; i < letras.length; i++){
+        if (letras[i] == "a"){
+            letras[i] = "ai";
+        }
+        if (letras[i] == "e"){
+            letras[i] = "enter";
+        }
+        if(letras[i] == "i"){
+            letras[i]= "imes";
+        }
+        if(letras[i]=="o"){
+            letras[i] = "ober";
+        }
+        if(letras[i]=="u"){
+            letras[i]=="ufat"
+        }
     }
-    return newForm;
+    
+    return letras;
+    
 }
 
 
