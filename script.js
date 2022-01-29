@@ -1,12 +1,22 @@
-var botonAdicionar = document.getElementById("btn-encriptar")
+var botonAdicionar = document.getElementById("btn-encriptar");
 
-botonAdicionar.addEventListener("click",function(e){
-    e.preventDefault();
+
+botonAdicionar.addEventListener("click",function(event){
+    event.preventDefault();
     var form = document.getElementById("input-texto");
     console.log(form.value);
 
     var frase = encriptarTexto(form.value);
     console.log(frase);
+    
+    var mensaje = document.querySelector("#msg box");
+
+    var fraseInput = document.createElement("input");
+    
+    fraseInput.textContent = frase; 
+    
+    mensaje.appendChild(fraseInput);
+
 });
 
 
@@ -31,9 +41,10 @@ function encriptarTexto (form){
             letras[i]=="ufat"
         }
     }
+
+    var mensajeEncriptado = letras.join('');
     
-    return letras;
-    
+    return mensajeEncriptado;
 }
 
 
