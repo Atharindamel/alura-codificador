@@ -1,22 +1,21 @@
-var botonAdicionar = document.getElementById("btn-encriptar");
+var botonAdicionarEncriptar = document.getElementById("btn-encriptar");
+var botonAdicionarDesencriptar = document.getElementById("btn-desencriptar");
 
 
-botonAdicionar.addEventListener("click",function(event){
+botonAdicionarEncriptar.addEventListener("click",function(event){
     event.preventDefault();
     var form = document.getElementById("input-texto");
-    console.log(form.value);
-
     var frase = encriptarTexto(form.value);
-    console.log(frase);
-    
-    var mensaje = document.querySelector("#msg box");
+    document.getElementById("msg").value = frase;
+    document.getElementById("input-texto").value = "";
+});
 
-    var fraseInput = document.createElement("input");
-    
-    fraseInput.textContent = frase; 
-    
-    mensaje.appendChild(fraseInput);
-
+botonAdicionarDesencriptar.addEventListener("click", function(event){
+    event.preventDefault();
+    var form = document.getElementById("input-texto");
+    var frase = desencriptarTexto(form.value);
+    document.getElementById("msg").value = frase;
+    document.getElementById("input-texto").value = "";
 });
 
 
@@ -47,25 +46,12 @@ function encriptarTexto (form){
     return mensajeEncriptado;
 }
 
+function desencriptarTexto (form){
+    form = form.replace(/ai/g,"a");
+    form = form.replace(/enter/g,"e");
+    form = form.replace(/imes/g,"i");
+    form = form.replace(/ober/g,"o");
+    form = form.replace(/ufat/g,"u");
 
-
-
-/* Reglas de encriptación: 
-"e" es convertido para "enter" 
-"i" es convertido para "imes"
-"a" es convertido para "ai"
-"o" es convertido para "ober"
-"u" es convertido para "ufat"
-Solo letras minusculas
-No se permite acentuación de palabras 
-*/
-
-/* Reglas de desencriptación: 
-"enter" es convertido para "e" 
-"imes" es convertido para "i"
-"ai" es convertido para "a"
-"ober" es convertido para "o"
-"ufat" es convertido para "u"
-Solo letras minusculas
-No se permite acentuación de palabras   
-*/
+    return form;
+}
