@@ -1,6 +1,5 @@
 var botonAdicionarEncriptar = document.getElementById("btn-encriptar");
 
-
 botonAdicionarEncriptar.addEventListener("click",function(event){
     event.preventDefault();
     var form = document.getElementById("input-texto");

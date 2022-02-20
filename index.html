@@ -8,29 +8,41 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="titulo">código secreto</h1>
+  <div id="page-container">
 
-  <main class="main">
-    <section class="form box">
-      <form onsubmit="test(e)">
-        <label for="input-texto">Solo letras minúsculas, sin acento</label>
-        <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui">
-        <input class="btn" type="submit" value="encriptar!" id="btn-encriptar">
-        <input class="btn" type="submit" value="desencriptar!" id="btn-desencriptar">
-      </form>
-    </section>
-  
-    <section class="msg box" id = "msg box">
-      <h2>Mensaje encriptada:</h2>
-      <input class="text-input" type="text" id="msg"></input>
-      <input class="btn" type="submit" value="copiar" id="btn-copy">
-    </section>
-  </main>
+    <div id="content-wrap">
 
-  <script src="javascript/encriptacion.js"></script>
-  <script src="javascript/desencriptacion.js"></script>
-  <script src="javascript/boton-copiar.js"></script>
-  <script src="javascript/caracteres-especiales.js"></script>
+      <h1 class="titulo">código secreto</h1>
+    
+      <main class="main">
+        <section class="form box">
+          <form onsubmit="test(e)">
+            <label for="input-texto">Solo letras minúsculas, sin acento</label>
+            <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui">
+            <input class="btn" type="submit" value="encriptar!" id="btn-encriptar">
+            <input class="btn" type="submit" value="desencriptar!" id="btn-desencriptar">
+          </form>
+        </section>
+      
+        <section class="msg box" id = "msg box">
+          <h2>Mensaje encriptada:</h2>
+          <input class="text-input" type="text" id="msg"></input>
+          <input class="btn" type="submit" value="copiar" id="btn-copy">
+        </section>
+      </main>
+    
+      <script src="javascript/encriptacion.js"></script>
+      <script src="javascript/desencriptacion.js"></script>
+      <script src="javascript/boton-copiar.js"></script>
+      <script src="javascript/caracteres-especiales.js"></script>
+    </div>
+
+    <footer id="footer">
+      <p>Copyright: Leonel Juiz</p>
+      <p>El presente correspode al primer Challenge propuesto por Alura Latam, en el marco del programa Oracle Next Education (ONE)</p>
+    </footer>
+
+  </div>
 
 </body>
 </html>
